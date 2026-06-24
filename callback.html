@@ -3,10 +3,11 @@
 <head><title>Auth Callback</title></head>
 <body>
 <h2>TikTok Auth Callback</h2>
-<p>Copy ค่าทั้งหมดในแถบ URL ด้านบนของเบราว์เซอร์ (ส่วนที่อยู่หลัง ?code=...)</p>
-<pre id="params"></pre>
+<p>Copy ค่านี้ไปวางในช่อง code ของ n8n (ตัดคำว่า "code: " ออกก่อน):</p>
+<pre id="params">Loading...</pre>
 <script>
-document.getElementById('params').textContent = window.location.search;
+const params = new URLSearchParams(window.location.search);
+document.getElementById('params').textContent = 'code: ' + params.get('code');
 </script>
 </body>
 </html>
